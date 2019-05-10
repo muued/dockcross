@@ -15,8 +15,8 @@
 #  ARG MXE_TARGET_LINK=shared
 #
 
-# mxe master 2019-02-27
-ARG MXE_GIT_TAG=2ce5587c94fc355b2c826c786a3ee018479d88d1
+# mxe fork commit with cmake 3.14.3
+ARG MXE_GIT_TAG=8cd0dc814a5552a0015799fe0523428d09f5f9ef
 
 ENV CMAKE_TOOLCHAIN_FILE /usr/src/mxe/usr/${MXE_TARGET_ARCH}-w64-mingw32.${MXE_TARGET_LINK}${MXE_TARGET_THREAD}/share/cmake/mxe-conf.cmake
 
@@ -79,7 +79,7 @@ RUN \
   # Download MXE sources
   #
   cd /usr/src && \
-  git clone https://github.com/mxe/mxe.git && \
+  git clone https://github.com/muued/mxe.git && \
   cd mxe && \
   git checkout ${MXE_GIT_TAG} && \
   #
